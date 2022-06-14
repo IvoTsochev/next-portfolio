@@ -26,11 +26,11 @@ export default function Home () {
           <Navbar />
           <Hero />
           <About />
-          <ServiceSection />
+          {/* <ServiceSection /> */ }
           <ExprienceSec />
           <ProjectSection />
-          <Testimonial />
-          <Pricing />
+          {/* <Testimonial /> */ }
+          {/* <Pricing /> */ }
           <ContactArea />
           <BlogSection />
           <Footer />
