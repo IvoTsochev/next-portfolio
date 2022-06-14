@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from 'react-scroll'
+import Image from 'next/image'
 
 
 const Hero = () => {
@@ -33,9 +34,9 @@ const Hero = () => {
       <div className="static-hero-right">
         <div className="static-hero-img">
           <div className="static-hero-img-inner">
-            <img src='images/slider/1.jpg' alt="" />
-            <div className="icon-1 floating-item"><img src='images/icon/wordpress.svg' alt="" /></div>
-            <div className="icon-2 floating-item"><img src='images/icon/shopify.svg' alt="" /></div>
+            <Image src='/images/me.jfif' width={ 550 } height={ 550 } alt="ivaylo tsochev photo" />
+            <div className="icon-1 floating-item"><img src='images/icon/wordpress.svg' alt="wordpress" /></div>
+            <div className="icon-2 floating-item"><img src='images/icon/shopify.svg' alt="shopify" /></div>
             <div className="icon-3 floating-item"><img src='images/icon/react.svg' alt="react" /></div>
             <div className="project floating-item">
               <div className="icon">
