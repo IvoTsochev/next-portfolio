@@ -21,46 +21,47 @@ const About = (props) => {
           <div className="col-lg-6 offset-lg-1 col-md-12 col-sm-12">
             <div className="wpo-about-content">
               <div className="wpo-about-title">
-                <h2>My Advantage</h2>
-                <p>Must explain to you how all this mistaken idea of denouncing
-                  pleasure and praising pain was born and I will give you a complete account
-                  the system and expound the actual and praising pain was born.</p>
+                <h2>Specialties</h2>
+                <p>Specialized in Front-End development and eCommerce stores build on
+                  Shopify. Experience with building websites and blogs using WordPress,
+                  and apps with Next/React.
+                </p>
               </div>
               <div className="wpo-about-funfact">
                 <div className="grid">
                   <div className="grid-inner">
                     <h3><span data-count="98">98</span>%</h3>
-                    <p>Figma</p>
+                    <p>Shopify</p>
                   </div>
                 </div>
                 <div className="grid">
                   <div className="grid-inner">
                     <h3><span data-count="92">92</span>%</h3>
-                    <p>Sketch</p>
+                    <p>NextJS</p>
                   </div>
                 </div>
                 <div className="grid">
                   <div className="grid-inner">
                     <h3><span data-count="88">88</span>%</h3>
-                    <p>Photoshop</p>
+                    <p>ReactJS</p>
                   </div>
                 </div>
                 <div className="grid">
                   <div className="grid-inner">
                     <h3><span data-count="72">72</span>%</h3>
-                    <p>Illustrator</p>
+                    <p>SCSS/SASS</p>
                   </div>
                 </div>
                 <div className="grid">
                   <div className="grid-inner">
-                    <h3><span data-count="43">43</span>%</h3>
+                    <h3><span data-count="43">79</span>%</h3>
                     <p>WordPress</p>
                   </div>
                 </div>
                 <div className="grid">
                   <div className="grid-inner">
-                    <h3><span data-count="37">37</span>%</h3>
-                    <p>ReactJS</p>
+                    <h3><span data-count="37">81</span>%</h3>
+                    <p>JavaScript</p>
                   </div>
                 </div>
               </div>

@@ -20,8 +20,7 @@ const Hero = () => {
                     <h5>React & Shopify Developer</h5>
                   </div>
                   <div data-swiper-parallax="400" className="slide-text">
-                    <p>Must explain to how all this mistaken idea denouncing pleasure pain
-                      the system and expound the actua.</p>
+                    <p>Delivering best custom experience. Specilized on Shopify eCommerce stores, WordPress blogs and React/Next apps.</p>
                   </div>
                   <div className="clearfix"></div>
                   <div className="slide-btn"><Link className="theme-btn" to="contact" spy={ true } smooth={ true } duration={ 500 }>Hire Me</Link></div>
