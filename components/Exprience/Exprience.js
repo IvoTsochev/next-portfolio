@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 import Link from 'next/link'
 import SectionTitle from '../SectionTitle/SectionTitle'
@@ -5,7 +6,7 @@ import SectionTitle from '../SectionTitle/SectionTitle'
 const Expriences = [
   {
     date: '2020 - Present',
-    logo: 'images/work/4.png',
+    logo: '/images/work/3.png',
     position: 'Front-End Developer',
     companyName: 'Vitamin Commerce',
     workFrom: '(Remote)',
@@ -13,7 +14,7 @@ const Expriences = [
   },
   {
     date: '2019 - 2020',
-    logo: 'images/work/1.png',
+    logo: '/images/work/2.png',
     position: 'Hosting Support',
     companyName: 'GoDaddy',
     workFrom: 'Sofia',
@@ -21,7 +22,7 @@ const Expriences = [
   },
   {
     date: '2012 - 2018',
-    logo: 'images/work/2.png',
+    logo: '/images/work/1.png',
     position: 'Sales Representative',
     companyName: 'Telenor Group',
     workFrom: 'Troyan',
@@ -43,7 +44,7 @@ const ExprienceSec = (props) => {
             <div className="wpo-work-item" key={ exp }>
               <ul>
                 <li className="date">{ experience.date }</li>
-                <li className="logo"><img src={ experience.logo } alt="" /></li>
+                <li className="logo"><Image layout='responsive' width={ 130 } height={ 110 } src={ experience.logo } alt="" /></li>
                 <li className="position">{ experience.position } <span>{ experience.companyName } <span>{ experience.workFrom }</span></span></li>
                 <li className="link">
                   <Link href={ experience.url || '/' }>
