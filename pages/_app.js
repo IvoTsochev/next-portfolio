@@ -6,8 +6,9 @@ import '../styles/font-awesome.min.css'
 import '../styles/themify-icons.css'
 import '../styles/flaticon.css'
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+
+function MyApp ({ Component, pageProps }) {
+  return <Component { ...pageProps } />
 }
 
 export default MyApp

@@ -1,7 +1,8 @@
 import Image from 'next/image'
-import React from 'react'
+import React, { useEffect } from 'react'
 import Link from 'next/link'
-import SectionTitle from '../SectionTitle/SectionTitle'
+import SectionTitle from '../SectionTitle/SectionTitle';
+import { animateExperiences } from '../../helpers/animations/animations';
 
 const Expriences = [
   {
@@ -35,6 +36,13 @@ const Expriences = [
 
 
 const ExprienceSec = (props) => {
+
+  useEffect(() => {
+    animateExperiences();
+  }, [])
+
+
+
   return (
     <div className="wpo-work-area section-padding" id="experience">
       <div className="container">

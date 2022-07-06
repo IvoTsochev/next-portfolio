@@ -1,10 +1,19 @@
-import React from 'react'
+import { useRef, useEffect } from 'react'
 import { Link } from 'react-scroll'
 import NavLink from 'next/link'
 import MobileMenu from '../MobileMenu/MobileMenu'
+import { gsap } from 'gsap';
+import { animateNavBar } from '../../helpers/animations/animations';
 
 
 const Header = (props) => {
+
+
+  useEffect(() => {
+    animateNavBar();
+  }, [])
+
+
 
   const ClickHandler = () => {
     window.scrollTo(10, 0);
@@ -21,8 +30,10 @@ const Header = (props) => {
               </div>
               <div className="col-lg-2 col-md-6 col-6">
                 <div className="navbar-header">
-                  <Link onClick={ ClickHandler } className="navbar-brand site-logo" to="/"><img
-                    src="images/logo.png" alt="" />Headless</Link>
+                  <Link onClick={ ClickHandler } className="navbar-brand site-logo" to="/">
+                    <img src="images/logo.png" alt="" />
+                    <span>Headless</span>
+                  </Link>
                 </div>
               </div>
               <div className="col-lg-8 col-md-1 col-1">
@@ -30,30 +41,30 @@ const Header = (props) => {
                   <button className="menu-close"><i className="ti-close"></i></button>
                   <ul className="nav navbar-nav mb-2 mb-lg-0">
                     <li className="menu-item-has-children">
-                      <a href="/">Home</a>
+                      <a href="/" className='menuItem'>Home</a>
                     </li>
                     <li>
-                      <Link activeClass="active" to="about" spy={ true } smooth={ true } duration={ 500 }>
+                      <Link className='menuItem' activeClass="active" to="about" spy={ true } smooth={ true } duration={ 500 }>
                         About
                       </Link>
                     </li>
                     <li>
-                      <Link activeClass="active" to="experience" spy={ true } smooth={ true } duration={ 500 }>
+                      <Link className='menuItem' activeClass="active" to="experience" spy={ true } smooth={ true } duration={ 500 }>
                         Experience
                       </Link>
                     </li>
                     <li>
-                      <Link activeClass="active" to="portfolio" spy={ true } smooth={ true } duration={ 500 } onClick={ ClickHandler }>
+                      <Link className='menuItem' activeClass="active" to="portfolio" spy={ true } smooth={ true } duration={ 500 } onClick={ ClickHandler }>
                         Portfolio
                       </Link>
                     </li>
                     <li>
-                      <Link activeClass="active" to="contact" spy={ true } smooth={ true } duration={ 500 }>
+                      <Link className='menuItem' activeClass="active" to="contact" spy={ true } smooth={ true } duration={ 500 }>
                         Contact
                       </Link>
                     </li>
                     <li>
-                      <Link activeClass="active" to="blog" spy={ true } smooth={ true } duration={ 500 }>
+                      <Link className='menuItem' activeClass="active" to="blog" spy={ true } smooth={ true } duration={ 500 }>
                         Blog
                       </Link>
                     </li>
