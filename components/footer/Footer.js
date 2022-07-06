@@ -11,7 +11,6 @@ const Footer = (props) => {
 
   const currentYear = new Date().getFullYear();
 
-
   return (
     <footer className="wpo-site-footer">
       <CtaSection />
@@ -49,6 +48,7 @@ const Footer = (props) => {
               <div className="widget link-widget">
                 <div className="widget-title">
                   <h3>Navigation</h3>
+                  
                 </div>
                 <ul>
                   <li><Link to="about" spy={ true } smooth={ true } duration={ 500 }>About us</Link></li>

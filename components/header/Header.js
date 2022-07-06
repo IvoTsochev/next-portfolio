@@ -33,17 +33,29 @@ const Header = (props) => {
                       <a href="/">Home</a>
                     </li>
                     <li>
-                      <Link activeClass="active" to="about" spy={ true } smooth={ true } duration={ 500 }>About</Link>
-                    </li>
-                    <li><Link activeClass="active" to="service" spy={ true } smooth={ true } duration={ 500 }>Service</Link></li>
-                    <li>
-                      <Link activeClass="active" to="portfolio" spy={ true } smooth={ true } duration={ 500 } onClick={ ClickHandler }>Portfolio</Link>
+                      <Link activeClass="active" to="about" spy={ true } smooth={ true } duration={ 500 }>
+                        About
+                      </Link>
                     </li>
                     <li>
-                      <Link activeClass="active" to="contact" spy={ true } smooth={ true } duration={ 500 }>Contact</Link>
+                      <Link activeClass="active" to="experience" spy={ true } smooth={ true } duration={ 500 }>
+                        Experience
+                      </Link>
                     </li>
                     <li>
-                      <Link activeClass="active" to="blog" spy={ true } smooth={ true } duration={ 500 }>Blog</Link>
+                      <Link activeClass="active" to="portfolio" spy={ true } smooth={ true } duration={ 500 } onClick={ ClickHandler }>
+                        Portfolio
+                      </Link>
+                    </li>
+                    <li>
+                      <Link activeClass="active" to="contact" spy={ true } smooth={ true } duration={ 500 }>
+                        Contact
+                      </Link>
+                    </li>
+                    <li>
+                      <Link activeClass="active" to="blog" spy={ true } smooth={ true } duration={ 500 }>
+                        Blog
+                      </Link>
                     </li>
                   </ul>
 
