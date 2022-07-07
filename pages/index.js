@@ -11,11 +11,12 @@ import ExprienceSec from '@/components/Exprience/Exprience';
 import Footer from '@/components/footer/Footer';
 import Hero from '@/components/hero/hero';
 import Navbar from '@/components/Navbar/Navbar';
-import Pricing from '@/components/Pricing/Pricing';
+// import Pricing from '@/components/Pricing/Pricing';
 import ProjectSection from '@/components/ProjectSection/ProjectSection';
 import Scrollbar from '@/components/scrollbar/scrollbar';
-import ServiceSection from '@/components/ServiceSection/ServiceSection';
-import Testimonial from '@/components/Testimonial/Testimonial';
+// import ServiceSection from '@/components/ServiceSection/ServiceSection';
+// import Testimonial from '@/components/Testimonial/Testimonial';
+import Swiper from '@/components/Swiper/Swiper';
 
 export default function Home () {
   return (
@@ -25,6 +26,7 @@ export default function Home () {
         <div className="br-app">
           <Navbar />
           <Hero />
+          <Swiper />
           <About />
           {/* <ServiceSection /> */ }
           <ExprienceSec />

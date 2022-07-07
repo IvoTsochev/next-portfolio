@@ -1,9 +1,35 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ContactForm from '../ContactFrom/ContactForm'
 import SectionTitle from '../SectionTitle/SectionTitle';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 
 const ContactArea = (props) => {
+
+
+  const contactFormAnimation = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.wpo-contact-area',
+      start: 'top 50%',
+      markers: false,
+      id: 'contact-form-section'
+    }
+  });
+
+  useEffect(() => {
+    contactFormAnimation
+      .from('.info-icon', {
+        opacity: 0,
+        scale: 0.5,
+        transformOrigin: 'center',
+        stagger: 0.5,
+        delay: 0.5,
+      })
+
+  }, [])
+
+
   return (
     <section className={ `wpo-contact-area section-padding ${props.contactclass}` } id="contact">
       <div className="wpo-wpo-contact-form-map">
@@ -45,13 +71,16 @@ const ContactArea = (props) => {
                       </div>
                     </div>
                     <div className="info-item">
-                      <h2>+91 256-987-239</h2>
+                      {/* <h2>+91 256-987-239</h2> */ }
                       <div className="info-wrap">
                         <div className="info-icon">
-                          <i className="fi flaticon-phone-call"></i>
+                          {/* <i className="fi flaticon-phone-call"></i> */ }
+                          <i className="fi flaticon-linkedin"></i>
                         </div>
                         <div className="info-text">
-                          <span>Official Phone</span>
+                          <a href="https://www.linkedin.com/in/ivaylotsochev/" target="_blank">
+                            <span>/in/ivaylotsochev/</span>
+                          </a>
                         </div>
                       </div>
                     </div>

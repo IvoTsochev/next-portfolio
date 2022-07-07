@@ -47,7 +47,8 @@ const ExprienceSec = (props) => {
         trigger: '.wpo-work-area',
         start: 'top 50%',
         end: 'bottom bottom',
-        markers: true,
+        markers: false,
+        id: 'experience-section'
       }
     })
       .from('.wpo-work-item', {
