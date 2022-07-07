@@ -6,6 +6,7 @@ import '../styles/font-awesome.min.css'
 import '../styles/themify-icons.css'
 import '../styles/flaticon.css'
 
+import { Fragment } from "react";
 
 function MyApp ({ Component, pageProps }) {
   return <Component { ...pageProps } />

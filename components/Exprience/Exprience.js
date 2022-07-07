@@ -2,7 +2,9 @@ import Image from 'next/image'
 import React, { useEffect } from 'react'
 import Link from 'next/link'
 import SectionTitle from '../SectionTitle/SectionTitle';
-import { animateExperiences } from '../../helpers/animations/animations';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+
 
 const Expriences = [
   {
@@ -36,6 +38,28 @@ const Expriences = [
 
 
 const ExprienceSec = (props) => {
+
+  gsap.registerPlugin(ScrollTrigger)
+
+  function animateExperiences () {
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: '.wpo-work-area',
+        start: 'top 50%',
+        end: 'bottom bottom',
+        markers: true,
+      }
+    })
+      .from('.wpo-work-item', {
+        xPercent: -100,
+        opacity: 0,
+        stagger: 0.2,
+        ease: 'back(1)',
+        duration: 1.5,
+      })
+  }
+
+
 
   useEffect(() => {
     animateExperiences();

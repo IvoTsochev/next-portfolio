@@ -3,10 +3,37 @@ import { Link } from 'react-scroll'
 import NavLink from 'next/link'
 import MobileMenu from '../MobileMenu/MobileMenu'
 import { gsap } from 'gsap';
-import { animateNavBar } from '../../helpers/animations/animations';
 
 
 const Header = (props) => {
+
+
+  function animateNavBar () {
+    gsap.timeline()
+      .from('.menuItem', {
+        yPercent: -100,
+        opacity: 0,
+        stagger: 0.1,
+        ease: 'back(8)',
+        duration: 0.5,
+        delay: 0.5
+      })
+      .from('.site-logo', {
+        scale: 0.5,
+        opacity: 0,
+        duration: 0.5,
+        ease: 'back(8)',
+        transformOrigin: 'center'
+      }, 1)
+      .from('.header-right', {
+        scale: 0.5,
+        opacity: 0,
+        duration: 0.5,
+        ease: 'back(8)',
+        transformOrigin: 'center'
+      }, 1)
+  }
+
 
 
   useEffect(() => {
