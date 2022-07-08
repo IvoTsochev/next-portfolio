@@ -1,13 +1,13 @@
 import { MongoClient } from 'mongodb';
 
-export async function fetchingPosts () {
+export async function fetchingPosts (username, password) {
 
 
   let client;
   let result;
 
   try {
-    client = await MongoClient.connect('mongodb+srv://headless:35UA7bwd5E9ZM9gFjmxK@cluster0.lh4j7.mongodb.net/?retryWrites=true&w=majority')
+    client = await MongoClient.connect(`mongodb+srv://${username}:${password}@cluster0.lh4j7.mongodb.net/?retryWrites=true&w=majority`)
     console.log('Connected to MongoDB');
   } catch (err) {
     console.log('Error connecting to MongoDB', err);
