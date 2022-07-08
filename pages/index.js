@@ -55,7 +55,7 @@ export async function getStaticProps () {
   let result;
 
   try {
-    result = await fetchingPosts('headless', '35UA7bwd5E9ZM9gFjmxK');
+    result = await fetchingPosts();
   }
   catch (err) {
     console.log('Error fetching data from MongoDB', err);

@@ -1,7 +1,9 @@
 import { MongoClient } from 'mongodb';
 
-export async function fetchingPosts (username, password) {
+export async function fetchingPosts () {
 
+  const username = process.env.DB_USERNAME;
+  const password = process.env.DB_PASSWORD;
 
   let client;
   let result;
