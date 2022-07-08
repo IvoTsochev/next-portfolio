@@ -1,6 +1,7 @@
 // Utils
 import Head from 'next/head'
 import React, { Fragment } from 'react';
+import { fetchingPosts } from '../helpers/allblogs';
 
 // Components
 import About from '@/components/about/about';
@@ -18,7 +19,12 @@ import Scrollbar from '@/components/scrollbar/scrollbar';
 // import Testimonial from '@/components/Testimonial/Testimonial';
 import Swiper from '@/components/Swiper/Swiper';
 
-export default function Home () {
+export default function Home ({ posts }) {
+
+
+  console.log('are beeeeeeeeeee', posts);
+
+
   return (
     <div id='scrool'>
       <CommonHead />
@@ -41,4 +47,32 @@ export default function Home () {
       </Fragment>
     </div>
   )
+}
+
+
+export async function getStaticProps () {
+
+  let result;
+
+  try {
+    result = await fetchingPosts();
+  }
+  catch (err) {
+    console.log('Error fetching data from MongoDB', err);
+  }
+
+  return {
+    props: {
+      posts: result.map(item => {
+        return {
+          id: item._id.toString(),
+          title: item.title,
+          excerpt: item.excerpt,
+          image: item.headerImgUrl,
+          content: item.content,
+        }
+      })
+    },
+    revalidate: 86400
+  }
 }

@@ -7,6 +7,7 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 const ContactArea = (props) => {
 
+  gsap.registerPlugin(ScrollTrigger);
 
   const contactFormAnimation = gsap.timeline({
     scrollTrigger: {
