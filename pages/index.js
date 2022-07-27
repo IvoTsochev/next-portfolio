@@ -1,7 +1,7 @@
 // Utils
-import Head from 'next/head'
+// import Head from 'next/head'
 import React, { Fragment } from 'react';
-import { fetchingPosts } from '../helpers/allblogs';
+// import { fetchingPosts } from '../helpers/allblogs';
 
 // Components
 import About from '@/components/about/about';
@@ -15,14 +15,14 @@ import Navbar from '@/components/Navbar/Navbar';
 // import Pricing from '@/components/Pricing/Pricing';
 import ProjectSection from '@/components/ProjectSection/ProjectSection';
 import Scrollbar from '@/components/scrollbar/scrollbar';
+import blogs from 'api/blogs';
 // import ServiceSection from '@/components/ServiceSection/ServiceSection';
 // import Testimonial from '@/components/Testimonial/Testimonial';
-import Swiper from '@/components/Swiper/Swiper';
+// import Swiper from '@/components/Swiper/Swiper';
 
 export default function Home ({ posts }) {
 
-
-  console.log('are beeeeeeeeeee', posts);
+  // console.log(posts);
 
 
   return (
@@ -32,7 +32,7 @@ export default function Home ({ posts }) {
         <div className="br-app">
           <Navbar />
           <Hero />
-          <Swiper />
+          {/* <Swiper /> */ }
           <About />
           {/* <ServiceSection /> */ }
           <ExprienceSec />
@@ -40,7 +40,7 @@ export default function Home ({ posts }) {
           {/* <Testimonial /> */ }
           {/* <Pricing /> */ }
           <ContactArea />
-          <BlogSection />
+          <BlogSection blogList={ posts } />
           <Footer />
           <Scrollbar />
         </div>
@@ -53,25 +53,41 @@ export default function Home ({ posts }) {
 export async function getStaticProps () {
 
   let result;
+  let data;
 
+  // fetching from mongodb
+  // try {
+  //   result = await fetchingPosts();
+  // }
+  // catch (err) {
+  //   console.log('Error fetching data from MongoDB', err);
+  // }
+
+  // fetching from blogs.headless.team
   try {
-    result = await fetchingPosts();
+    result = await fetch('http://blog.headless.team/wp-json/wp/v2/blog-posts');
+    data = await result.json();
+    console.log('fetch data json', data);
+
   }
   catch (err) {
-    console.log('Error fetching data from MongoDB', err);
+    console.log('Error fetching data from blogs.headless.team', err);
   }
+
 
   return {
     props: {
-      posts: result.map(item => {
-        return {
-          id: item._id.toString(),
-          title: item.title,
-          excerpt: item.excerpt,
-          image: item.headerImgUrl,
-          content: item.content,
-        }
-      })
+      posts: data
+      // posts: result
+      // posts: result.map(item => {
+      //   return {
+      //     id: item._id.toString(),
+      //     title: item.title,
+      //     excerpt: item.excerpt,
+      //     image: item.headerImgUrl,
+      //     content: item.content,
+      //   }
+      // })
     },
     revalidate: 86400
   }
