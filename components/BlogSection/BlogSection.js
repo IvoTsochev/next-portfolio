@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import blogs from '../../api/blogs'
 import BlogSingle from "../BlogSingle";
 import Image from 'next/image';
+import Link from 'next/link'
 
 const settings = {
   dots: false,
@@ -71,7 +72,6 @@ const BlogSection = ({ blogList }) => {
   const handleClickOpen = (item) => {
     setOpen(true);
     setSinglePostData(item)
-    console.log('singlePostData', singlePostData);
   }
   return (
 
@@ -81,6 +81,7 @@ const BlogSection = ({ blogList }) => {
           <div className="col-lg-5">
             <div className="wpo-section-title">
               <h2>Latest News</h2>
+              <h3><a href="/blog">View All Posts</a></h3>
               <p>Must explain to you how all this mistaken idea pleasure
                 born and give you a complete account.</p>
             </div>

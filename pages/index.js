@@ -22,7 +22,6 @@ import blogs from 'api/blogs';
 
 export default function Home ({ posts }) {
 
-  // console.log(posts);
 
 
   return (
@@ -67,8 +66,6 @@ export async function getStaticProps () {
   try {
     result = await fetch('http://blog.headless.team/wp-json/wp/v2/blog-posts');
     data = await result.json();
-    console.log('fetch data json', data);
-
   }
   catch (err) {
     console.log('Error fetching data from blogs.headless.team', err);
