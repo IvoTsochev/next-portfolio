@@ -8,7 +8,15 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 
 const Expriences = [
   {
-    date: '2020 - Present',
+    date: '2022 - Present',
+    logo: '/images/work/3.png',
+    position: 'React Developer',
+    companyName: 'Devi8 Studio',
+    workFrom: '(Remote)',
+    url: '/'
+  },
+  {
+    date: '2020 - 2022',
     logo: '/images/work/3.png',
     position: 'Front-End Developer',
     companyName: 'Vitamin Commerce',

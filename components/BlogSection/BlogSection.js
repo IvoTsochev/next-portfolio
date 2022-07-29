@@ -65,12 +65,13 @@ const BlogSection = ({ blogList }) => {
     setOpen(false);
   }
 
-  const [state, setState] = useState({
+  const [singlePostData, setSinglePostData] = useState({
   })
 
   const handleClickOpen = (item) => {
     setOpen(true);
-    setState(item)
+    setSinglePostData(item)
+    console.log('singlePostData', singlePostData);
   }
   return (
 
@@ -130,7 +131,7 @@ const BlogSection = ({ blogList }) => {
           </defs>
         </svg>
       </div>
-      <BlogSingle open={ open } onClose={ handleClose } title={ state.title } bImg={ state.screens } create_at={ state.create_at } author={ state.author } comment={ state.comment } />
+      {/* <BlogSingle open={ open } onClose={ handleClose } title={ singlePostData.title } bImg={ singlePostData.better_featured_image.source_url } create_at={ singlePostData.acf.published_on } author={ singlePostData.acf.post_author } comment={ singlePostData.comment } /> */ }
     </section>
   );
 }
