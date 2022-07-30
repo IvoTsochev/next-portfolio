@@ -5,6 +5,7 @@ import '../styles/sass/style.scss'
 import '../styles/font-awesome.min.css'
 import '../styles/themify-icons.css'
 import '../styles/flaticon.css'
+import '../styles/global.css'
 
 import { Fragment } from "react";
 

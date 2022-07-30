@@ -1,17 +1,45 @@
-import Head from 'next/head'
-import Fragment from 'react'
+// Utils
+import { fetchBlogsFromWp } from '@/helpers/allblogs';
+import Image from 'next/image';
+
 
 // Components
-import Navbar from '@/components/Navbar/Navbar';
+import NavbarBlog from '@/components/NavbarBlog/Navbar';
 import Footer from '@/components/footer/Footer';
 
-const Blog = () => {
+const Blog = ({ data }) => {
+
+
+  console.log(data);
+
   return (
-    <div>
-      <Navbar />
-      <h1>AIDE BEEEEEE</h1>
+    <div className=''>
+      <NavbarBlog />
+
+      <div className='mt-30 mb-30'>
+        { data.map((blog) => (
+          <h1>{ blog.title.rendered }</h1>
+        )) }
+      </div>
+
+      {/* <Footer /> */ }
     </div>
   )
 }
 
 export default Blog
+
+
+export const getStaticProps = async (ctx) => {
+
+
+  const posts = await fetchBlogsFromWp();
+
+
+
+  return {
+    props: {
+      data: posts
+    }
+  }
+}
