@@ -2,6 +2,7 @@
 // import Head from 'next/head'
 import React, { Fragment } from 'react';
 // import { fetchingPosts } from '../helpers/allblogs';
+import { fetchBlogsFromWp } from '../helpers/allblogs';
 
 // Components
 import About from '@/components/about/about';
@@ -15,14 +16,12 @@ import Navbar from '@/components/Navbar/Navbar';
 // import Pricing from '@/components/Pricing/Pricing';
 import ProjectSection from '@/components/ProjectSection/ProjectSection';
 import Scrollbar from '@/components/scrollbar/scrollbar';
-import blogs from 'api/blogs';
+// import blogs from 'api/blogs';
 // import ServiceSection from '@/components/ServiceSection/ServiceSection';
 // import Testimonial from '@/components/Testimonial/Testimonial';
-// import Swiper from '@/components/Swiper/Swiper';
 
 export default function Home ({ posts }) {
 
-  // console.log(posts);
 
 
   return (
@@ -52,8 +51,7 @@ export default function Home ({ posts }) {
 
 export async function getStaticProps () {
 
-  let result;
-  let data;
+  // let result;
 
   // fetching from mongodb
   // try {
@@ -64,15 +62,7 @@ export async function getStaticProps () {
   // }
 
   // fetching from blogs.headless.team
-  try {
-    result = await fetch('http://blog.headless.team/wp-json/wp/v2/blog-posts');
-    data = await result.json();
-    console.log('fetch data json', data);
-
-  }
-  catch (err) {
-    console.log('Error fetching data from blogs.headless.team', err);
-  }
+  const data = await fetchBlogsFromWp();
 
 
   return {

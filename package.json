@@ -25,5 +25,10 @@
     "sass": "^1.52.2",
     "simple-react-validator": "^1.6.1",
     "slick-carousel": "^1.8.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.8",
+    "postcss": "^8.4.14",
+    "tailwindcss": "^3.1.7"
   }
 }
