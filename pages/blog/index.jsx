@@ -8,20 +8,19 @@ import NavbarBlog from '@/components/NavbarBlog/Navbar';
 import Footer from '@/components/footer/Footer';
 import SingleCard from '@/components/SingleCard/SingleCard';
 
+// Styling
+import './blog.module.scss';
+
 
 const Blog = ({ data }) => {
 
 
 
   return (
-    <div className='h-100'>
+    <div className='blogPage'>
       <NavbarBlog />
 
-      <div className='
-        flex
-        max-w-md
-        justify-center
-        '>
+      <div className='blogPage__wrapper'>
         { data.map((blog) => (
           <SingleCard
             key={ blog.id }

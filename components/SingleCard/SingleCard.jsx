@@ -4,15 +4,15 @@ const SingleCard = ({ title, img_src }) => {
 
 
   return (
-    <div className='cursor-pointer'>
+    <div className='singleCard'>
       <Image
         src={ img_src }
         width={ 450 }
         height={ 320 }
         objectFit='cover'
-        className='m-2'
+        className='singleCard--img'
       />
-      <h2 className='max-w-sm mt-2'>{ title }</h2>
+      <h2 className='singleCard--title'>{ title }</h2>
     </div>
   )
 }
